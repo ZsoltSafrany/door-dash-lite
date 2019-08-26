@@ -1,1 +1,1 @@
-# door-dash-lite
+<img src="screenshots/device-screenshot.png" width="300">
