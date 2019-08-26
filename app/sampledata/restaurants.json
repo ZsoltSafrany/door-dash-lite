@@ -1,0 +1,10 @@
+{
+  "restaurants" :[
+    {"name" : "Tsing Tao", "description": "Chinese, Soup", "status" : "12 Mins" },
+    {"name" : "Tycoon", "description": "Thai, Laotian", "status" : "15 Mins" },
+    {"name" : "Food 4 U", "description": "Thai, Laotian", "status" : "21 Mins" },
+    {"name" : "Thai Restaurant", "description": "Thai, Laotian", "status" : "Closed" },
+    {"name" : "Home-Cooked Kitchen", "description": "Thai, Laotian", "status" : "Closed" },
+    {"name" : "Restaurant with a very very long name", "description": "Restaurant description that is much much longer than expected, getting very very long", "status" : "Restaurant status that is very very very long and even longer" }
+  ]
+}

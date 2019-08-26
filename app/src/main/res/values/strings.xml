@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">DoorDashLite</string>
+    <string name="title_discover_restaurants">Discover</string>
+    <string name="restaurant_thumbnail_content_desc">Restaurant thumbnail</string>
+    <string name="error_message_default">Oops, something went wrong; please try again in a moment.</string>
+    <string name="try_again_button_text">Try again</string>
+    <string name="order_button_text">Order</string>
+</resources>

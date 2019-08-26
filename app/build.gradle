@@ -1,0 +1,70 @@
+apply plugin: 'com.android.application'
+apply plugin: 'androidx.navigation.safeargs'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion "29.0.1"
+    defaultConfig {
+        applicationId "safi.doordashlite"
+        minSdkVersion 19
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    dataBinding {
+        enabled = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    testOptions {
+        unitTests.includeAndroidResources = true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+
+    // Picasso
+    implementation "com.squareup.picasso:picasso:$picassoVersion"
+
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
+
+    // RX Java
+    implementation "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion"
+    implementation "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
+    implementation "io.reactivex.rxjava2:rxkotlin:$rxKotlinVersion"
+
+    // Dagger
+    implementation "com.google.dagger:dagger:$daggerVersion"
+    implementation "com.google.dagger:dagger-android:$daggerVersion"
+    implementation "com.google.dagger:dagger-android-support:$daggerVersion"
+    kapt "com.google.dagger:dagger-compiler:$daggerVersion"
+    kapt "com.google.dagger:dagger-android-processor:$daggerVersion"
+
+    // Android X
+    implementation "androidx.navigation:navigation-fragment:$xNavigationVersion"
+    implementation "androidx.navigation:navigation-ui:$xNavigationVersion"
+    implementation "androidx.constraintlayout:constraintlayout:$xConstraintLayoutVersion"
+    implementation "androidx.recyclerview:recyclerview:$xRecycleViewVersion"
+    implementation "androidx.lifecycle:lifecycle-extensions:$xLifecycleExtVersion"
+
+    // Testing
+    testImplementation "junit:junit:$testJUnitVersion"
+    testImplementation "org.mockito:mockito-core:$testMockitoVersion"
+    testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:$testMockitoKotlinVersion"
+    testImplementation "org.robolectric:robolectric:$testRobolectricVersion"
+    testImplementation "com.google.truth:truth:$testGoogleTruthVersion"
+    testImplementation "androidx.test:core:$xTestCoreVersion"
+}

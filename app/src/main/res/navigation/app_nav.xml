@@ -1,0 +1,26 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/app_nav"
+    app:startDestination="@id/discoverRestaurantsFragment">
+
+
+    <fragment
+        android:id="@+id/discoverRestaurantsFragment"
+        android:name="safi.doordashlite.ui.fragment.DiscoverRestaurantsFragment"
+        android:label="DiscoverRestaurantsFragment">
+        <action
+            android:id="@+id/action_discover_restaurants_to_restaurant_detail"
+            app:destination="@id/restaurantDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/restaurantDetailFragment"
+        android:name="safi.doordashlite.ui.fragment.RestaurantDetailFragment"
+        android:label="RestaurantDetailFragment">
+        <argument
+            android:name="restaurant_id"
+            app:argType="long" />
+        <argument
+            android:name="restaurant_name"
+            app:argType="string" />
+    </fragment>
+</navigation>
