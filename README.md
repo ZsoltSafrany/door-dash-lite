@@ -1,1 +1,1 @@
-<img src="screenshots/device-screenshot.png" width="300">
+<img src="screenshots/device-screenshot-with-favs.png" width="300">
