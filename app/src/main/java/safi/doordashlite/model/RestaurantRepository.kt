@@ -11,4 +11,6 @@ interface RestaurantRepository {
         offset: Int,
         limit: Int
     ): Single<List<Restaurant>>
+
+    fun setFavorite(restaurantId: Long, favorite: Boolean)
 }

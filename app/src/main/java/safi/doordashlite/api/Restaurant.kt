@@ -7,5 +7,6 @@ data class Restaurant(
     val name: String,
     val description: String,
     val status: String,
-    @SerializedName("cover_img_url") val coverImageUrl: String?
+    @SerializedName("cover_img_url") val coverImageUrl: String?,
+    val favorite: Boolean
 )

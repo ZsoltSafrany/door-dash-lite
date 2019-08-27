@@ -72,6 +72,10 @@ class DiscoverRestaurantsViewModel @Inject constructor(
         return currentState?.copy(loadingInProgress = true) ?: ViewState(loadingInProgress = true)
     }
 
+    fun setFavorite(restaurantId: Long, favorite: Boolean) {
+        restaurantRepository.setFavorite(restaurantId, favorite)
+    }
+
     data class ViewState(
         val restaurants: List<Restaurant>? = null,
         val errorMessage: String? = null,

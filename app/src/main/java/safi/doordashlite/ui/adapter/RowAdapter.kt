@@ -24,7 +24,7 @@ class RowAdapter<Model>(private val rowSpec: RowSpec<Model>) :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val model = items[position]
-        holder.bind(model)
+        holder.bind(model, position)
     }
 
     override fun getItemCount(): Int {
@@ -40,8 +40,8 @@ class RowAdapter<Model>(private val rowSpec: RowSpec<Model>) :
     inner class ViewHolder(itemView: View, private val row: Row<Model>) :
         RecyclerView.ViewHolder(itemView) {
 
-        fun bind(rowData: Model) {
-            row.bind(rowData)
+        fun bind(rowData: Model, position: Int) {
+            row.bind(rowData, { items[position] = it })
             itemView.setOnClickListener { clickEventSubject.onNext(rowData) }
         }
     }
@@ -53,6 +53,6 @@ class RowAdapter<Model>(private val rowSpec: RowSpec<Model>) :
     interface Row<T> {
         fun inflate(inflater: LayoutInflater, parent: ViewGroup): View
 
-        fun bind(model: T)
+        fun bind(model: T, modelMutator: (T) -> Unit)
     }
 }

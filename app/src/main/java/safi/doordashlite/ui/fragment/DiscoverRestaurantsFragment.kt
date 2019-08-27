@@ -85,7 +85,14 @@ class DiscoverRestaurantsFragment : DoorDashFragment() {
         val itemDecoration = DividerItemDecoration(context, layoutManager.orientation)
         viewBinding.resultList.addItemDecoration(itemDecoration)
 
-        adapter = RowAdapter(RestaurantRowSpec())
+        val rowSpec = RestaurantRowSpec()
+        rowSpec
+            .favoriteChangeEvent
+            .observeOn(schedulerProvider.mainThread())
+            .subscribe { viewModel.setFavorite(it.restaurantId, it.favorite) }
+            .bind(disposables)
+
+        adapter = RowAdapter(rowSpec)
         adapter
             .clickEvent
             .observeOn(schedulerProvider.mainThread())
