@@ -24,8 +24,8 @@ class DiscoverRestaurantsViewModelTest {
 
     companion object {
         private val EXCEPTION = IOException("Throwing fake exception to imitate failure")
-        private val RESTAURANT1 = Restaurant(1, "rest1", "desc1", "status1", "url1")
-        private val RESTAURANT2 = Restaurant(2, "rest2", "desc2", "status2", "url2")
+        private val RESTAURANT1 = Restaurant(1, "rest1", "desc1", "status1", "url1", false)
+        private val RESTAURANT2 = Restaurant(2, "rest2", "desc2", "status2", "url2", false)
     }
 
     private var repository = mock(RestaurantRepository::class.java)
